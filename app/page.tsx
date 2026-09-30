@@ -92,7 +92,10 @@ export default function Home() {
             <span className="grid h-10 w-10 place-items-center rounded-2xl bg-ink text-white shadow-sm"><UsersRound size={20} aria-hidden="true" /></span>
             Buddy groups
           </a>
-          <a className="text-sm font-medium text-ink/60 transition hover:text-ink" href="/organizer">Organizer view</a>
+          <nav className="flex items-center gap-4 text-sm font-medium text-ink/60">
+            <a className="transition hover:text-ink" href="/buddy">Buddy view</a>
+            <a className="hidden transition hover:text-ink sm:block" href="/organizer">Organizer view</a>
+          </nav>
         </header>
 
         <section className="grid flex-1 items-center gap-12 py-12 lg:grid-cols-[1fr_0.86fr] lg:py-16">
