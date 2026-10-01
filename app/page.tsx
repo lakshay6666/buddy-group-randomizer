@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 
 type Assignment = { name: string; groupNo: number; groupName: string };
 
-const GROUP_STYLES = ["#EF6A5B", "#F4A340", "#E0C03A", "#47A977", "#3D9BC7", "#6D71D9", "#A45BB8"];
+const GROUP_STYLES = ["#EF6A5B", "#F4A340", "#E0C03A", "#47A977", "#3D9BC7", "#6D71D9", "#A45BB8", "#D45B8C"];
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -104,7 +104,7 @@ export default function Home() {
               <Dices size={15} aria-hidden="true" /> Fair, balanced, and random
             </div>
             <h1 className="text-balance text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-ink sm:text-6xl">Meet your buddy group.</h1>
-            <p className="mt-6 max-w-lg text-lg leading-8 text-ink/62">Enter your name once. We’ll place you in one of seven evenly sized groups for today’s university welcome.</p>
+            <p className="mt-6 max-w-lg text-lg leading-8 text-ink/62">Enter your name once. We’ll place you in one of eight evenly sized groups for today’s university welcome.</p>
             <div aria-hidden="true" className="mt-10 flex items-center gap-2">
               {GROUP_STYLES.map((color, index) => (
                 <span key={color} className="grid h-10 w-10 place-items-center rounded-full text-sm font-bold text-white shadow-sm ring-4 ring-canvas" style={{ backgroundColor: color, marginLeft: index ? "-8px" : 0 }}>{index + 1}</span>

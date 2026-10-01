@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 type Roster = { groupNo: number; groupName: string; students: { name: string }[] };
-const COLORS = ["#EF6A5B", "#F4A340", "#E0C03A", "#47A977", "#3D9BC7", "#6D71D9", "#A45BB8"];
+const COLORS = ["#EF6A5B", "#F4A340", "#E0C03A", "#47A977", "#3D9BC7", "#6D71D9", "#A45BB8", "#D45B8C"];
 
 export default function BuddyPage() {
   const [groupNo, setGroupNo] = useState("1");
@@ -52,7 +52,7 @@ export default function BuddyPage() {
 
           <div className="p-6 sm:p-8">
             <form onSubmit={submit} className="grid items-end gap-4 sm:grid-cols-[1fr_1fr_auto]">
-              <div className="space-y-2"><Label>Group</Label><Select value={groupNo} onValueChange={(value) => { setGroupNo(value); setRoster(null); }}><SelectTrigger className="h-12 w-full rounded-xl border-ink/15 bg-canvas/45 px-4 text-base"><SelectValue /></SelectTrigger><SelectContent>{Array.from({ length: 7 }, (_, index) => <SelectItem key={index + 1} value={String(index + 1)}>Group {index + 1}</SelectItem>)}</SelectContent></Select></div>
+              <div className="space-y-2"><Label>Group</Label><Select value={groupNo} onValueChange={(value) => { setGroupNo(value); setRoster(null); }}><SelectTrigger className="h-12 w-full rounded-xl border-ink/15 bg-canvas/45 px-4 text-base"><SelectValue /></SelectTrigger><SelectContent>{Array.from({ length: 8 }, (_, index) => <SelectItem key={index + 1} value={String(index + 1)}>Group {index + 1}</SelectItem>)}</SelectContent></Select></div>
               <div className="space-y-2"><Label htmlFor="buddy-code">Access code</Label><Input id="buddy-code" value={code} onChange={(event) => setCode(event.target.value.toUpperCase())} placeholder="Enter your code" autoComplete="off" maxLength={12} required className="h-12 rounded-xl border-ink/15 bg-canvas/45 px-4 text-base uppercase tracking-wider" /></div>
               <Button disabled={busy || !code.trim()} className="h-12 rounded-xl bg-ink px-6 text-white hover:bg-ink/90">{busy ? "Opening…" : "Open group"}</Button>
             </form>
