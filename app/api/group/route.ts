@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     const code = typeof body.code === "string" ? body.code.trim().toUpperCase() : "";
     const codes = getBuddyCodes();
 
-    if (!Number.isInteger(groupNo) || groupNo < 1 || groupNo > 8) {
+    if (!Number.isInteger(groupNo) || groupNo < 1 || groupNo > 3) {
       return Response.json({ error: "Choose a valid group." }, { status: 400 });
     }
     if (!codes[groupNo - 1] || code !== codes[groupNo - 1]) {

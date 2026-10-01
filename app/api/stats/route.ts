@@ -5,7 +5,7 @@ type GroupRow = { group_no: number; member_count: number };
 export async function GET() {
   try {
     const result = await env.DB.prepare(`
-      WITH options(group_no) AS (VALUES (1), (2), (3), (4), (5), (6), (7), (8))
+      WITH options(group_no) AS (VALUES (1), (2), (3))
       SELECT options.group_no, COUNT(assignments.id) AS member_count
       FROM options
       LEFT JOIN assignments ON assignments.group_no = options.group_no

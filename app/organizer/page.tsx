@@ -6,7 +6,7 @@ import { Check, Clipboard, Download, RefreshCw, UsersRound } from "lucide-react"
 import { Button } from "@/components/ui/button";
 
 type Group = { groupNo: number; groupName: string; count: number };
-const COLORS = ["#EF6A5B", "#F4A340", "#E0C03A", "#47A977", "#3D9BC7", "#6D71D9", "#A45BB8", "#D45B8C"];
+const COLORS = ["#EF6A5B", "#F4A340", "#E0C03A"];
 
 export default function OrganizerPage() {
   const [groups, setGroups] = useState<Group[]>([]);
@@ -41,7 +41,7 @@ export default function OrganizerPage() {
     window.setTimeout(() => setCopied(false), 1800);
   }
 
-  const displayGroups = groups.length ? groups : Array.from({ length: 8 }, (_, index) => ({ groupNo: index + 1, groupName: `Group ${index + 1}`, count: 0 }));
+  const displayGroups = groups.length ? groups : Array.from({ length: 3 }, (_, index) => ({ groupNo: index + 1, groupName: `Group ${index + 1}`, count: 0 }));
 
   return (
     <main className="min-h-screen px-5 py-6 sm:px-8 sm:py-10">

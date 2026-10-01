@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     if (!token) return Response.json({ error: "Your browser could not create a check-in token. Please try again." }, { status: 400 });
 
     const inserted = await env.DB.prepare(`
-      WITH options(group_no) AS (VALUES (1), (2), (3), (4), (5), (6), (7), (8)),
+      WITH options(group_no) AS (VALUES (1), (2), (3)),
       chosen(group_no) AS (
         SELECT options.group_no
         FROM options
