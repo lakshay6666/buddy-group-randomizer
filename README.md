@@ -1,6 +1,21 @@
-# vinext-starter
+# Buddy Group Randomizer
 
-A clean full-stack starter running on [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and Drizzle support.
+A small university welcome tool that assigns students by name to one of three evenly balanced groups. Students use the main form, organizers monitor group counts and share the QR code, and buddies can open their protected group roster with an access code.
+
+Built with [vinext](https://github.com/cloudflare/vinext), React, Cloudflare Workers, and D1. The hosted application is private by default; runtime secrets and student assignments are stored by the hosting platform and are not committed to this repository.
+
+## Hosted access
+
+The existing ChatGPT Site is configured for owner-only access. Changing access is a hosting setting and does not require a code change or database reset.
+
+To make a Site publicly accessible:
+
+1. Open the Site in ChatGPT Sites or Codex while signed in as its owner.
+2. Open the Site's sharing or access settings.
+3. Change the audience from **Private/Custom** to **Public** (anyone with the link).
+4. Share the production URL and verify it in a signed-out or private browser window.
+
+You can also ask Codex: `Make the Buddy Group Randomizer Site public.` The owner must authorize the access change. Do not add passwords, buddy codes, reset codes, or other secrets to this repository; configure them as protected runtime environment variables in Sites.
 
 ## Prerequisites
 
